@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { dataReducer, initialState } from "../reducers/dataReducer";
 import axios from "axios";
 

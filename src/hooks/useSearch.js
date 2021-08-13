@@ -15,10 +15,8 @@ export const useSearch = () => {
         return null;
       });
 
-     
       cardDataDispatch({ type: "ON_SEARCH", payload: { response: data } });
     } else {
-       
       cardDataDispatch({
         type: "ON_SUCCESS",
         payload: [...cardDataState.data],

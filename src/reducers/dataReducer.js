@@ -6,7 +6,6 @@ export const initialState = {
 export const dataReducer = (state, action) => {
   switch (action.type) {
     case "ON_SUCCESS":
-      
       return {
         data: action.payload,
         response: action.payload,
@@ -20,15 +19,15 @@ export const dataReducer = (state, action) => {
 
     case "FILTER_CARD_BY_OWNER_ID":
       return { ...state, response: action.payload.response };
-    
-      case "FILTER_CARD_BY_TYPE":
-        return { ...state, response: action.payload.response };
+
+    case "FILTER_CARD_BY_TYPE":
+      return { ...state, response: action.payload.response };
 
     case "ALL_CARD":
-    return { ...state, response: action.payload.response };
+      return { ...state, response: action.payload.response };
 
     case "BLOCKED_CARD":
-    return { ...state, response: action.payload.response };
+      return { ...state, response: action.payload.response };
     default:
       return state;
   }

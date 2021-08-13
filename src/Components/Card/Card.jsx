@@ -38,13 +38,13 @@ export const Card = ({
           </span>
         </div>
 
-        <div className="flex">
-          <progress
-            id="progress"
-            value={spent}
-            max={available_to_spend}
-            className="w-full h-2 "
-          ></progress>
+        <div className="flex bg-green-500 w-full h-3 rounded-md">
+          <div
+            className="flex bg-pink-500 z-10 rounded-md "
+            style={{
+              width: `${parseInt((spent * 100) / available_to_spend)}%`,
+            }}
+          ></div>
         </div>
         <div className="flex justify-between items-center  w-full text-sm">
           <div className="flex items-center">
