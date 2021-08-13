@@ -8,8 +8,6 @@ export const useFilter = () => {
       const filterData = cardDataState.data.filter(
         (card) => card.card_type === filterStr
       );
-
-      console.log(filterData);
       cardDataDispatch({
         type: "FILTER_CARD_BY_TYPE",
         payload: { response: filterData },

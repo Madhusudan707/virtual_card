@@ -9,11 +9,10 @@ export const useTab = () => {
   const { cardDataState, cardDataDispatch } = useData();
   const { loginData } = useUser();
   const { pathURL } = usePathName();
+  const [cardCount, setCardCount] = useState(1000);
 
-  console.log(pathURL);
   useEffect(() => {
     (() => {
-      console.log(pathURL);
       if (pathURL === "/your" || pathURL === "/home") {
         setIsYour(true);
         setIsAll(false);
@@ -21,6 +20,7 @@ export const useTab = () => {
         const data = cardDataState.response.filter(
           (card) => card.owner_id === loginData[0].id
         );
+        setCardCount(data.length);
         cardDataDispatch({
           type: "FILTER_CARD_BY_OWNER_ID",
           payload: { response: data },
@@ -29,6 +29,7 @@ export const useTab = () => {
         setIsAll(true);
         setIsYour(false);
         setIsBlocked(false);
+        setCardCount(1000);
         cardDataDispatch({
           type: "ALL_CARD",
           payload: { response: cardDataState.response },
@@ -37,6 +38,7 @@ export const useTab = () => {
         setIsBlocked(true);
         setIsYour(false);
         setIsAll(false);
+        setCardCount(1000);
         cardDataDispatch({
           type: "ALL_CARD",
           payload: { response: cardDataState.response },
@@ -46,5 +48,5 @@ export const useTab = () => {
     // eslint-disable-next-line
   }, [pathURL]);
 
-  return { isYour, isAll, isBlocked, cardDataState };
+  return { isYour, isAll, isBlocked, cardDataState, cardCount };
 };

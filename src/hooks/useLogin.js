@@ -15,9 +15,12 @@ export const useLogin = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loginData[0].id) {
-      navigate("/home");
+    if(loginData){
+      if (loginData[0].id) {
+        navigate("/home");
+      }
     }
+   
     // eslint-disable-next-line
   }, [loginData]);
 

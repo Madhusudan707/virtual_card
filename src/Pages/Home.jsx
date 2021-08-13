@@ -3,17 +3,26 @@ import { useInfiniteScroll, useTab } from "../hooks";
 
 export const Home = () => {
   const { last } = useInfiniteScroll();
-  const { isYour, isAll, isBlocked, cardDataState } = useTab();
+  const { isYour, isAll, isBlocked, cardDataState, cardCount } = useTab();
 
   return (
     <>
-      <div>
+      <div className="fixed w-full bg-white z-50">
         <Header />
-        <TabBar your={isYour} all={isAll} blocked={isBlocked} />
+
+        <TabBar
+          your={isYour}
+          all={isAll}
+          blocked={isBlocked}
+          cardCount={cardCount}
+        />
+
         <Search />
       </div>
 
-      <div className="flex flex-wrap ">
+      
+
+      <div className="flex flex-wrap py-56 ">
         {cardDataState.response
           .slice(0, last)
           .map(
