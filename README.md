@@ -1,7 +1,7 @@
 # Virtual Card
 
 
-Deployed app: [https://virtualcard21.netlify.app](https://virtualcard21.netlify.app)    
+Live Site: [https://virtualcard21.netlify.app](https://virtualcard21.netlify.app)    
 
     
 ## Test Login Details
