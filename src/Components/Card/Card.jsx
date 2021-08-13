@@ -48,9 +48,9 @@ export const Card = ({
         </div>
         <div className="flex justify-between items-center  w-full text-sm">
           <div className="flex items-center">
-            <p className="rounded-full h-4 w-4 bg-red-500"></p>
+            <p className="rounded-full h-4 w-4 bg-pink-500"></p>
             <span className="text-sm p-2" style={{ fontSize: "12px" }}>
-              Spent{" "}
+              Spent
             </span>
           </div>
           <div className="flex">
