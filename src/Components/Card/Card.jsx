@@ -9,7 +9,7 @@ export const Card = ({
   limit,
 }) => {
   return (
-    <div className="flex lg:ml-24 my-2 justify-center  ">
+    <div className="flex ml-1 lg:ml-24 my-2 justify-center  ">
       <div className="flex flex-col w-96 border p-2 shadow-md  ">
         <div className="flex justify-between  ">
           <span className="font-bold">{name}</span>

@@ -7,9 +7,12 @@ export const Login = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="bg-white lg:w-4/12 md:w-1/2 sm:w-6/12 w-full mx-auto">
-        <div className="p-5 border-b-2">
-          <h4 className="font-semibold uppercase text-gray-700">Login</h4>
+        <div className='flex justify-center items-center p-2'>
+          <img className='rounded-full h-12 w-12 shadow-md' src='virtual_card_icon.png ' alt='vc-logo'/>
         </div>
+        {/* <div className="p-5 border-b-2 text-center">
+          <h4 className="font-semibold uppercase text-gray-700">Login</h4>
+        </div> */}
         <div className="p-5">
           <form className="w-full">
             <div className="inline-grid w-full mb-3">
