@@ -1,7 +1,8 @@
 # Virtual Card
 
 
-Deployed app: [https://startup-reads.netlify.app/](https://startup-reads.netlify.app/)    
+Deployed app: [https://virtualcard21.netlify.app](https://virtualcard21.netlify.app)    
+
     
 ## Test Login Details
 
