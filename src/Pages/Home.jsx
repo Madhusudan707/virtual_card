@@ -1,9 +1,11 @@
 import { Header, TabBar, Search, Card } from "../Components";
 import { useInfiniteScroll, useTab } from "../hooks";
+import { useData } from "../contexts";
 
 export const Home = () => {
   const { last } = useInfiniteScroll();
-  const { isYour, isAll, isBlocked, cardDataState, cardCount } = useTab();
+  const { isYour, isAll, isBlocked, cardCount } = useTab();
+  const {cardDataState} = useData()
 
   return (
     <>

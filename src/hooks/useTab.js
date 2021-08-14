@@ -17,7 +17,7 @@ export const useTab = () => {
         setIsYour(true);
         setIsAll(false);
         setIsBlocked(false);
-        const data = cardDataState.response.filter(
+        const data = cardDataState.data.filter(
           (card) => card.owner_id === loginData[0].id
         );
         setCardCount(data.length);
@@ -25,15 +25,17 @@ export const useTab = () => {
           type: "FILTER_CARD_BY_OWNER_ID",
           payload: { response: data },
         });
+      
       } else if (pathURL === "/all") {
         setIsAll(true);
         setIsYour(false);
         setIsBlocked(false);
-        setCardCount(1000);
+        setCardCount(cardDataState.data.length);
         cardDataDispatch({
           type: "ALL_CARD",
-          payload: { response: cardDataState.response },
+          payload: { response: cardDataState.data },
         });
+       
       } else if (pathURL === "/blocked") {
         setIsBlocked(true);
         setIsYour(false);
@@ -41,12 +43,12 @@ export const useTab = () => {
         setCardCount(1000);
         cardDataDispatch({
           type: "ALL_CARD",
-          payload: { response: cardDataState.response },
+          payload: { response: cardDataState.data },
         });
       }
     })();
     // eslint-disable-next-line
   }, [pathURL]);
 
-  return { isYour, isAll, isBlocked, cardDataState, cardCount };
+  return { isYour, isAll, isBlocked, cardCount };
 };
