@@ -1,11 +1,13 @@
+import { useRef } from "react";
 import { Header, TabBar, Search, Card } from "../Components";
 import { useInfiniteScroll, useTab } from "../hooks";
 import { useData } from "../contexts";
 
 export const Home = () => {
-  const { last } = useInfiniteScroll();
+  const targetRef = useRef(null);
   const { isYour, isAll, isBlocked, cardCount } = useTab();
-  const {cardDataState} = useData()
+  const { cardDataState } = useData();
+  const { last } = useInfiniteScroll(targetRef);
 
   return (
     <>
@@ -21,8 +23,6 @@ export const Home = () => {
 
         <Search />
       </div>
-
-      
 
       <div className="flex flex-wrap py-56 ">
         {cardDataState.response
@@ -54,6 +54,9 @@ export const Home = () => {
               );
             }
           )}
+      </div>
+      <div ref={targetRef} className="flex justify-center -mt-44">
+        Loading...
       </div>
     </>
   );
